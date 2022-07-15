@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="assets/output.css" />
+		<title>Document</title>
+	</head>
+	<body background="assets/gradisent.png">
+		<header class="bg-biru">
+			<div class="flex p-6 flex-col items-center text-putih">
+				<div class="p-2 text-8xl">Libary of Alexandria</div>
+				<div class="p-2 text-4xl">Your Personal Catalog</div>
+			</div>
+		</header>
+		<div class="flex flex-row">
+			<div class="container m-3 w-1/2">
+				<div class="bg-biru text-center text-putih p-3 rounded-t-lg">
+					<div class="uppercase">book's waiting room</div>
+				</div>
+				<div id="list-wait" class="flex flex-col my-1">
+					<!-- <div id="item" class="flex p-3 mt-1 bg-oren rounded shadow-biru">
+						<div id="inner" class="block">
+							<div>Title</div>
+							<div>Author, 2002</div>
+						</div>
+						<button id="check-button" class=""></button>
+					</div> -->
+				</div>
+			</div>
+			<div class="container m-3 w-1/2">
+				<div class="bg-biru text-center text-putih p-3 rounded-t-lg">
+					<div class="uppercase">completed books</div>
+				</div>
+				<div id="list-completed" class="flex flex-col my-1">
+					<div id="item" class="flex p-3 mt-1 bg-oren rounded shadow-biru">
+						<div id="inner" class="block">
+							<div>Title</div>
+							<div>Author, 2002</div>
+						</div>
+						<button id="" class="check-button"></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<button
+			id="open-form"
+			class="mx-5 my-4 p-2 px-5 bg-biru hover:bg-biruhover hover:drop-shadow-sm text-putih rounded cursor-pointer fixed bottom-0 right-0"
+			onclick="openForm()"
+		>
+			Add New Book
+		</button>
+
+		<div
+			class="form-popup m-3 px-5 z-10 fixed bottom-0 right-0 text-putih hidden"
+			id="myForm"
+		>
+			<form
+				id="bookForm"
+				class="form-container max-h-screen max-w-xs p-3 rounded-lg bg-biru"
+			>
+				<div>ADD NEW BOOK</div>
+				<label for="title" class="m-2"><b>Title</b></label>
+				<input
+					type="text"
+					class="m-2 ml-7 text-hitam"
+					id="title"
+					placeholder="Enter title"
+					name="title"
+					required
+				/>
+				<label for="auth" class="m-2"><b>Author</b></label>
+				<input
+					type="text"
+					class="m-3 text-hitam"
+					id="auth"
+					placeholder="Enter Author's Name"
+					name="auth"
+					required
+				/>
+				<label for="date" class="m-2"><b>Year</b></label>
+				<input
+					type="number"
+					class="m-2 ml-7 w-40 text-hitam"
+					id="year"
+					placeholder="Enter Year"
+					name="date"
+					required
+					min="1000"
+					max="2030"
+				/>
+				<button
+					type="submit"
+					class="btn px-3 py-1 mt-3 mx-2 cursor-pointer mb-3 opacity-90 hover:opacity-100 hover:shadow-md bg-ijo text-polos rounded"
+					id="addBook"
+				>
+					ADD
+				</button>
+				<button
+					type="button"
+					class="btn cancel px-3 py-1 cursor-pointer mb-3 opacity-90 hover:opacity-100 hover:shadow-md bg-merah text-polos rounded"
+					onclick="closeForm()"
+				>
+					CLOSE
+				</button>
+			</form>
+		</div>
+	</body>
+</html>
+<script src="assets/script.js"></script>
