@@ -83,6 +83,7 @@ let addTrashButtonEvent = () => {
 	const trashbuttons = document.querySelectorAll('.trash-button');
 	for (const trashbutton of trashbuttons) {
 		trashbutton.addEventListener('click', (ev) => {
+			alert('buku terhapus');
 			trashBook(trashbutton.id);
 		});
 	}
