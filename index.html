@@ -5,13 +5,14 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="assets/output.css" />
+		<script src="assets/script.js" defer></script>
 		<title>Catalog</title>
 	</head>
 	<body background="assets/gradisent.png">
-		<header class="bg-biru">
-			<div class="flex p-6 flex-col items-center text-putih">
-				<div class="p-2 text-8xl">Libary of Alexandria</div>
-				<div class="p-2 text-4xl">Your Personal Catalog</div>
+		<header class="p-5 bg-biru">
+			<div class="text-putih">
+				<div class="p-3 text-center text-8xl">ZULUL Catalog</div>
+				<div class="p-3 text-center text-4xl">Your Personal Catalog</div>
 			</div>
 		</header>
 		<div class="flex flex-row">
@@ -25,7 +26,7 @@
 							<div>Title</div>
 							<div>Author, 2002</div>
 						</div>
-						<button id="check-button" class=""></button>
+						<button id="" class="check-button"></button>
 					</div> -->
 				</div>
 			</div>
@@ -33,15 +34,15 @@
 				<div class="bg-biru text-center text-putih p-3 rounded-t-lg">
 					<div class="uppercase">completed books</div>
 				</div>
-				<!-- <div id="list-completed" class="flex flex-col my-1">
-					<div id="item" class="flex p-3 mt-1 bg-oren rounded shadow-biru">
+				<div id="list-completed" class="flex flex-col my-1">
+					<!-- <div id="item" class="flex p-3 mt-1 bg-oren rounded shadow-biru">
 						<div id="inner" class="block">
 							<div>Title</div>
 							<div>Author, 2002</div>
 						</div>
 						<button id="" class="check-button"></button>
-					</div>
-				</div> -->
+					</div> -->
+				</div>
 			</div>
 		</div>
 		<button
@@ -58,31 +59,31 @@
 		>
 			<form
 				id="bookForm"
-				class="form-container max-h-screen max-w-xs p-3 rounded-lg bg-biru"
+				class="form-container max-h-screen max-w-fit p-5 rounded-lg bg-biru block"
 			>
-				<div>ADD NEW BOOK</div>
-				<label for="title" class="m-2"><b>Title</b></label>
+				<div class="mb-4">ADD NEW BOOK</div>
+				<label for="title" class=""><b>Title</b></label>
 				<input
 					type="text"
-					class="m-2 ml-7 text-hitam"
+					class="mb-3 text-hitam"
 					id="title"
 					placeholder="Enter title"
 					name="title"
 					required
 				/>
-				<label for="auth" class="m-2"><b>Author</b></label>
+				<label for="auth" class=""><b>Author</b></label>
 				<input
 					type="text"
-					class="m-3 text-hitam"
+					class="mb-3 text-hitam"
 					id="auth"
 					placeholder="Enter Author's Name"
 					name="auth"
 					required
 				/>
-				<label for="date" class="m-2"><b>Year</b></label>
+				<label for="date" class=""><b>Year</b></label>
 				<input
 					type="number"
-					class="m-2 ml-7 w-40 text-hitam"
+					class="mb-3 w-40 text-hitam"
 					id="year"
 					placeholder="Enter Year"
 					name="date"
@@ -108,4 +109,3 @@
 		</div>
 	</body>
 </html>
-<script src="assets/script.js"></script>

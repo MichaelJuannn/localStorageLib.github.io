@@ -23,7 +23,7 @@ let createList = (book) => {
 	const htmlListWait = `<div id="item" class="flex p-3 mt-1 bg-oren rounded shadow-biru">
 	<div id="book-${book.id}" class="block">
 		<div>${book.title}</div>
-		<div>${book.author},${book.year}</div>
+		<div>${book.author}, ${book.year}</div>
 	</div>
 	<button id="${book.id}" class="check-button"></button>
 </div>`;
@@ -31,7 +31,7 @@ let createList = (book) => {
 	const htmlListComplete = `<div id="item" class="flex p-3 mt-1 bg-oren rounded shadow-biru">
 	<div id="${book.id}" class="block">
 		<div>${book.title}</div>
-		<div>${book.author},${book.year}</div>
+		<div>${book.author}, ${book.year}</div>
 	</div>
 	<button id="check-button" class=""></button>
 </div>`;
@@ -61,6 +61,22 @@ let getBook = () => {
 	books = values;
 };
 
+let completeBook = (bookId) => {
+	let item = JSON.parse(localStorage.getItem(bookId));
+	item.isComplete = true;
+	item = JSON.stringify(item);
+	localStorage.setItem(bookId, item);
+};
+
+let addCheckButtonEvent = () => {
+	const checkbuttons = document.querySelectorAll('.check-button');
+	for (const checkbutton of checkbuttons) {
+		checkbutton.addEventListener('click', (ev) => {
+			completeBook(checkbutton.id);
+		});
+	}
+};
+
 form.addEventListener('submit', (ev) => {
 	storeBook();
 	ev.preventDefault();
@@ -75,4 +91,4 @@ let closeForm = () => {
 	document.getElementById('open-form').classList.remove('hidden');
 };
 
-window.onload = renderBook();
+(window.onload = renderBook()), addCheckButtonEvent();
