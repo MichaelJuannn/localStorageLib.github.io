@@ -33,8 +33,9 @@ let createList = (book) => {
 		<div>${book.title}</div>
 		<div>${book.author}, ${book.year}</div>
 	</div>
-	<button id="check-button" class=""></button>
-</div>`;
+	<button id="${book.id}" class="undo-button"></button>
+	<button id="${book.id}" class="trash-button"></button>
+	</div>`;
 	if (book.isComplete === false) {
 		document.getElementById('list-wait').innerHTML += htmlListWait;
 	} else {
@@ -47,6 +48,9 @@ let renderBook = () => {
 	for (const book of books) {
 		createList(book);
 	}
+	addCheckButtonEvent();
+	addTrashButtonEvent();
+	addUndoButtonEvent();
 };
 
 let getBook = () => {
@@ -61,18 +65,45 @@ let getBook = () => {
 	books = values;
 };
 
-let completeBook = (bookId) => {
+let moveBook = (bookId) => {
 	let item = JSON.parse(localStorage.getItem(bookId));
-	item.isComplete = true;
+	if (item.isComplete !== true) {
+		item.isComplete = true;
+	} else {
+		item.isComplete = false;
+	}
 	item = JSON.stringify(item);
 	localStorage.setItem(bookId, item);
+	location.reload();
 };
 
+let trashBook = (bookId) => {
+	localStorage.removeItem(bookId);
+	location.reload();
+};
+
+let addTrashButtonEvent = () => {
+	const trashbuttons = document.querySelectorAll('.trash-button');
+	for (const trashbutton of trashbuttons) {
+		trashbutton.addEventListener('click', (ev) => {
+			console.log('dragon');
+			trashBook(trashbutton.id);
+		});
+	}
+};
+let addUndoButtonEvent = () => {
+	const undobuttons = document.querySelectorAll('.undo-button');
+	for (const undobutton of undobuttons) {
+		undobutton.addEventListener('click', (ev) => {
+			moveBook(undobutton.id);
+		});
+	}
+};
 let addCheckButtonEvent = () => {
 	const checkbuttons = document.querySelectorAll('.check-button');
 	for (const checkbutton of checkbuttons) {
 		checkbutton.addEventListener('click', (ev) => {
-			completeBook(checkbutton.id);
+			moveBook(checkbutton.id);
 		});
 	}
 };
@@ -91,4 +122,4 @@ let closeForm = () => {
 	document.getElementById('open-form').classList.remove('hidden');
 };
 
-(window.onload = renderBook()), addCheckButtonEvent();
+window.onload = renderBook();

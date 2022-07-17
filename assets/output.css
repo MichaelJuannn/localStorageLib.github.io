@@ -165,6 +165,11 @@
   background-color: rgb(159 52 52 / var(--tw-bg-opacity));
 }
 
+.bg-putih{
+  --tw-bg-opacity: 1;
+  background-color: rgb(207 202 209 / var(--tw-bg-opacity));
+}
+
 .p-5{
   padding: 1.25rem;
 }
@@ -243,6 +248,26 @@
   width: 40px;
   height: 40px;
   background: url('check-svgrepo-com.svg');
+  border: 0;
+  background-size: contain;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.trash-button {
+  width: 40px;
+  height: 40px;
+  background: url('trash-svgrepo-com.svg');
+  border: 0;
+  background-size: contain;
+  cursor: pointer;
+  margin-left: 0;
+}
+
+.undo-button {
+  width: 40px;
+  height: 40px;
+  background: url('undo-svgrepo-com.svg');
   border: 0;
   background-size: contain;
   cursor: pointer;
