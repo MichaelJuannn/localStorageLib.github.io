@@ -67,7 +67,7 @@ let getBook = () => {
 
 let moveBook = (bookId) => {
 	let item = JSON.parse(localStorage.getItem(bookId));
-	if (item.isComplete !== true) {
+	if (item.isComplete == false) {
 		item.isComplete = true;
 	} else {
 		item.isComplete = false;
