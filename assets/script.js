@@ -13,10 +13,7 @@ let createBookObject = () => {
 
 let storeBook = () => {
 	let bookObject = createBookObject();
-	localStorage.setItem(+new Date(), JSON.stringify(bookObject));
-	bookKey = parseInt(bookKey);
-	bookKey += 1;
-	localStorage.setItem('book', bookKey);
+	localStorage.setItem(bookObject.id, JSON.stringify(bookObject));
 };
 
 let createList = (book) => {
@@ -86,7 +83,6 @@ let addTrashButtonEvent = () => {
 	const trashbuttons = document.querySelectorAll('.trash-button');
 	for (const trashbutton of trashbuttons) {
 		trashbutton.addEventListener('click', (ev) => {
-			console.log('dragon');
 			trashBook(trashbutton.id);
 		});
 	}
@@ -110,6 +106,7 @@ let addCheckButtonEvent = () => {
 
 form.addEventListener('submit', (ev) => {
 	storeBook();
+	location.reload();
 	ev.preventDefault();
 });
 
