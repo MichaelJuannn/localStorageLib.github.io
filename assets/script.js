@@ -23,6 +23,7 @@ let createList = (book) => {
 		<div>${book.author}, ${book.year}</div>
 	</div>
 	<button id="${book.id}" class="check-button"></button>
+	<button id="${book.id}" class="trash-button"></button>
 </div>`;
 
 	const htmlListComplete = `<div id="item" class="flex p-3 mt-1 bg-oren rounded shadow-biru">
